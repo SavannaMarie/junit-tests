@@ -11,4 +11,10 @@ public class Student {
         this.name = name;
         this.grades = new ArrayList<>();
     }
+    public void addGrade(int grade) {
+        this.grades.add(grade);
+    }
+    public ArrayList<Integer> getGrades() {
+        return this.grades;
+    }
 }
