@@ -14,7 +14,7 @@ public class CohortTest {
     Student mark;
 
     @Before
-    public void init(){
+    public void setup(){
 
         emptyCohort = new Cohort();
         cohortWOne = new Cohort();
@@ -47,19 +47,19 @@ public class CohortTest {
     }
 
     @Test
-    public void testIfAddStudentWorks(){
+    public void addStudentWorks(){
         assertEquals(1, cohortWOne.getStudents().size());
         assertEquals(3, cohortWMany.getStudents().size());
     }
 
     @Test
-    public void testIfGetStudentsWork(){
+    public void getStudentsWork(){
         assertEquals("Mark", cohortWMany.getStudents().get(1).getName());
         assertEquals("Savanna", cohortWOne.getStudents().get(0).getName());
     }
 
     @Test
-    public void testIfCohortAvgWorks(){
+    public void cohortAvgWorks(){
         assertEquals(85, cohortWMany.getCohortAverage(), 0);
     }
 
