@@ -28,6 +28,6 @@ public class StudentTest {
         assertEquals(456L, student1.getId());
         assertEquals("Savanna", student1.getName());
         assertEquals(100, (int) student1.getGrades().get(0));
-        assertEquals(90.0, student1.getGradeAverage(), 0);
+        assertEquals(90, student1.getGradeAverage(), 0);
     }
 }
