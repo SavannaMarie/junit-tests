@@ -8,6 +8,11 @@ public class CohortTest {
     Cohort cohortWOne;
     Cohort cohortWMany;
 
+    Student savanna;
+    Student marky;
+    Student killer;
+    Student mark;
+
     @Before
     public void init(){
 
@@ -15,36 +20,47 @@ public class CohortTest {
         cohortWOne = new Cohort();
         cohortWMany = new Cohort();
 
-        Student fer = new Student(10L, "Fer");
-        Student david = new Student(20L, "David");
+        savanna = new Student(145L, "Savanna");
+        marky = new Student(146L, "Marky");
+        killer = new Student(148L, "Killer");
+        mark = new Student(147L, "Mark");
 
-        fer.addGrade(100);
-        fer.addGrade(40);
+        savanna.addGrade(100);
+        savanna.addGrade(40);
 
-        david.addGrade(80);
-        david.addGrade(90);
-        cohortWOne.addStudent(fer);
-        cohortWMany.addStudent(fer);
-        cohortWMany.addStudent(david);
+        marky.addGrade(80);
+        marky.addGrade(90);
 
+
+        mark.addGrade(80);
+        mark.addGrade(90);
+
+
+        killer.addGrade(80);
+        killer.addGrade(90);
+
+        cohortWOne.addStudent(savanna);
+
+        cohortWMany.addStudent(marky);
+        cohortWMany.addStudent(mark);
+        cohortWMany.addStudent(killer);
     }
 
     @Test
     public void testIfAddStudentWorks(){
         assertEquals(1, cohortWOne.getStudents().size());
-        assertEquals(2, cohortWMany.getStudents().size());
+        assertEquals(3, cohortWMany.getStudents().size());
     }
 
     @Test
     public void testIfGetStudentsWork(){
-        assertEquals(10, cohortWMany.getStudents().get(0).getId());
-        assertEquals(20, cohortWMany.getStudents().get(1).getId());
+        assertEquals("Mark", cohortWMany.getStudents().get(1).getName());
+        assertEquals("Savanna", cohortWOne.getStudents().get(0).getName());
     }
 
     @Test
     public void testIfCohortAvgWorks(){
-        assertEquals(70, cohortWOne.getCohortAverage(), 0.5);
-        assertEquals(77.5, cohortWMany.getCohortAverage(), 0.5);
+        assertEquals(85, cohortWMany.getCohortAverage(), 0);
     }
 
 
