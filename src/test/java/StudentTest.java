@@ -6,7 +6,7 @@ public class StudentTest {
     Student student2;
     Student student1;
     @Before
-    public void studentsCreating() {
+    public void setup() {
         student1 = new Student(456L, "Savanna");
         student1.addGrade(100);
         student1.addGrade(87);
